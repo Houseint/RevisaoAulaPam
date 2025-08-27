@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 500,
+    height: 300,
     resizeMode: 'contain',
     marginBottom: 20,
   },
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   paddingHorizontal: 15,
   borderRadius: 8,
   width: '80%',
+  height: '7%',
   marginBottom: 15,
   },
   buttonOptions: {
