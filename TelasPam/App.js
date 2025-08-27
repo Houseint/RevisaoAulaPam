@@ -1,17 +1,18 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './src/Loading'; 
-import LoginScreen from './src/login'; 
+import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createNativeStackNavigator();
+import Loading from './src/Loading';
+import Login from './src/Login';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Loading">
-        <Stack.Screen name="Loading" component={HomeScreen} />
-        <Stack.Screen name="login" component={LoginScreen} />
+      <Stack.Navigator initialRouteName="Loading" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Loading" component={Loading} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );

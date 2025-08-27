@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, CheckBox, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
-const login = () => {
+const Login = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Acesse</Text>
@@ -21,9 +21,10 @@ const login = () => {
         secureTextEntry
       />
 
-      <View style={styles.checkboxContainer}>
-        <CheckBox />
-        <Text style={styles.checkboxLabel}>Lembrar senha</Text>
+      <View style={styles.row}>
+        <TouchableOpacity>
+          <Text style={styles.checkboxLabel}>Lembrar senha</Text>
+        </TouchableOpacity>
         <TouchableOpacity>
           <Text style={styles.forgotPassword}>Esqueci minha senha</Text>
         </TouchableOpacity>
@@ -34,7 +35,7 @@ const login = () => {
       </TouchableOpacity>
 
       <TouchableOpacity style={[styles.button, styles.outlineButton]}>
-        <Text style={styles.buttonText}>Cadastrar</Text>
+        <Text style={styles.buttonOutlineText}>Cadastrar</Text>
       </TouchableOpacity>
 
       <Text style={styles.orText}>Ou continue com</Text>
@@ -51,24 +52,10 @@ const login = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    fontSize: 16,
-    marginVertical: 10,
-  },
-  label: {
-    marginTop: 15,
-    fontSize: 14,
-  },
+  container: { flex: 1, padding: 20, backgroundColor: '#FFFFFF' },
+  title: { fontSize: 24, fontWeight: 'bold' },
+  subtitle: { fontSize: 16, marginVertical: 10 },
+  label: { marginTop: 15, fontSize: 14 },
   input: {
     height: 50,
     borderColor: '#CCCCCC',
@@ -76,20 +63,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 10,
   },
-  checkboxContainer: {
+  row: {
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 15,
+    justifyContent: 'space-between',
   },
-  checkboxLabel: {
-    marginLeft: 8,
-    fontSize: 14,
-  },
-  forgotPassword: {
-    marginLeft: 'auto',
-    fontSize: 14,
-    color: '#007BFF',
-  },
+  checkboxLabel: { fontSize: 14 },
+  forgotPassword: { fontSize: 14, color: '#007BFF' },
   button: {
     backgroundColor: '#28A745',
     paddingVertical: 15,
@@ -101,28 +82,20 @@ const styles = StyleSheet.create({
     borderColor: '#28A745',
     borderWidth: 1,
   },
-  buttonText: {
-    color: '#FFFFFF',
+  buttonText: { color: '#FFFFFF', textAlign: 'center', fontSize: 16 },
+  buttonOutlineText: {
+    color: '#28A745',
     textAlign: 'center',
     fontSize: 16,
   },
-  orText: {
-    marginTop: 20,
-    textAlign: 'center',
-    fontSize: 14,
-  },
+  orText: { marginTop: 20, textAlign: 'center', fontSize: 14 },
   socialLoginContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 10,
   },
-  socialButton: {
-    margin: 10,
-  },
-  icon: {
-    width: 30,
-    height: 30,
-  },
+  socialButton: { margin: 10 },
+  icon: { width: 30, height: 30, resizeMode: 'contain' },
 });
 
-export default login;
+export default Login;
